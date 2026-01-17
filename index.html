@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PONTOS DE POMBAGIRA</title>
+    <style>
+        /* BASE E RESET */
+        * { box-sizing: border-box; }
+        body {
+            background-color: #050505;
+            color: #d4af37;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        /* CABEÇALHO */
+        header {
+            text-align: center;
+            padding: 40px 15px;
+            background: linear-gradient(to bottom, #1a0000, #050505);
+        }
+        h1 {
+            color: #b30000;
+            font-size: clamp(2rem, 10vw, 3.5rem);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+        }
+        .frase-topo {
+            color: #888;
+            font-style: italic;
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            display: block;
+            margin-top: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 10px;
+        }
+
+        /* GRID RESPONSIVA */
+        .grid-pontos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* CARD DA POMBAGIRA */
+        .card-pombagira {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            border-top: 3px solid #b30000;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .card-pombagira:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(179, 0, 0, 0.3);
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 15px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nome-pombagira {
+            color: #e60000;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .atributo {
+            color: #d4af37;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .cemiterio {
+            color: #555;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* PLAYER DE VÍDEO (MOBILE FRIENDLY) */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Mantém 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 2px;
+            background: #000;
+            margin: 15px 0;
+            border: 1px solid #1a1a1a;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* BOTÃO */
+        .btn-link {
+            text-align: center;
+            text-decoration: none;
+            color: #b30000;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 10px;
+            border: 1px solid #b30000;
+            border-radius: 2px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-link:hover {
+            background: #b30000;
+            color: #fff;
+        }
+
+        /* RODAPÉ VISCERAL */
+        footer {
+            margin-top: 80px;
+            padding: 60px 20px;
+            border-top: 1px solid #331111;
+            text-align: center;
+            background: linear-gradient(to bottom, #050505, #1a0000);
+        }
+        .footer-titulo {
+            color: #b30000;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(179,0,0,0.5);
+        }
+        .footer-frase {
+            color: #777;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .footer-selo {
+            margin-top: 40px;
+            color: #333;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        /* AJUSTE PARA CELULARES PEQUENOS */
+        @media (max-width: 480px) {
+            .grid-pontos { padding: 0 10px; }
+            .card-pombagira { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PONTOS DE POMBAGIRA</h1>
+        <span class="frase-topo">"Onde o pé dela pisa, o inferno se ajoelha e o destino se curva ao som do seu gargalhar."</span>
+    </header>
+
+    <div class="grid-pontos">
+        
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Maria Padilha</span>
+                <span class="atributo">Comando / Realeza</span>
+                <span class="cemiterio">Cemitério da Consolação - São Paulo</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/tC_RDfGe1MU" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/tC_RDfGe1MU" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Maria Mulambo</span>
+                <span class="atributo">Cura / Humildade</span>
+                <span class="cemiterio">Cemitério São João Batista - Rio de Janeiro</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/yuoHwAb-DKU" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/yuoHwAb-DKU" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Maria Quitéria</span>
+                <span class="atributo">Guerra / Proteção</span>
+                <span class="cemiterio">Cemitério do Père-Lachaise - Paris</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/jLr4AtWX3zU" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/jLr4AtWX3zU" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Rosa Caveira</span>
+                <span class="atributo">Justiça / Morte</span>
+                <span class="cemiterio">Cemitério de Highgate - Londres</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/K_B1LJ77Z2o" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/K_B1LJ77Z2o" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Dama da Noite</span>
+                <span class="atributo">Mistério / Oculto</span>
+                <span class="cemiterio">Cemitério da Recoleta - Buenos Aires</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/-2NuXJzZC0c" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/-2NuXJzZC0c" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Sete Saias</span>
+                <span class="atributo">Alegria / Intensidade</span>
+                <span class="cemiterio">Cemitério Municipal - Curitiba</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/t3YhMcwURzY" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/t3YhMcwURzY" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira Cigana</span>
+                <span class="atributo">Liberdade / Prosperidade</span>
+                <span class="cemiterio">Cemitério do Caju - Rio de Janeiro</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/qN935nP6tEw" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/qN935nP6tEw" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Maria Navalha</span>
+                <span class="atributo">Malandragem / Rua</span>
+                <span class="cemiterio">St. Louis No. 1 - New Orleans</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/CoVIhTrUe3w" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/CoVIhTrUe3w" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira da Praia</span>
+                <span class="atributo">Emoção / Limpeza</span>
+                <span class="cemiterio">Cemitério de San Isidro - Madrid</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Ti_-EusVSj8" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/Ti_-EusVSj8" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Maria Farrapo</span>
+                <span class="atributo">Sanidade / Caos</span>
+                <span class="cemiterio">Cemitério Monumental - Milão</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/JYCfOQtEz50" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/JYCfOQtEz50" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira Menina</span>
+                <span class="atributo">Renovação / Inocência</span>
+                <span class="cemiterio">Hollywood Forever - Califórnia</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/3krnGT0s0bQ" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/3krnGT0s0bQ" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira da Figueira</span>
+                <span class="atributo">Raiz / Ancestralidade</span>
+                <span class="cemiterio">Cemitério Protestante - Roma</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/2-NjMF-6GzI" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/2-NjMF-6GzI" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira das Almas</span>
+                <span class="atributo">Transmutação / Passagem</span>
+                <span class="cemiterio">Cemitério do Bonfim - Belo Horizonte</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/wo_D21rsYAE" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/wo_D21rsYAE" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Sete Encruzilhadas</span>
+                <span class="atributo">Caminhos / Escolhas</span>
+                <span class="cemiterio">Cemitério de Maruí - Niterói</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/doPc-mLAH1g" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/doPc-mLAH1g" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira da Lua</span>
+                <span class="atributo">Intuição / Ciclos</span>
+                <span class="cemiterio">Skogskyrkogården - Estocolmo</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hH1pNWlM2zE" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/hH1pNWlM2zE" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira das Trevas</span>
+                <span class="atributo">Domínio / Sombras</span>
+                <span class="cemiterio">Zentralfriedhof - Viena</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/coi-tvUWwmc" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/coi-tvUWwmc" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira da Serra</span>
+                <span class="atributo">Força / Elevação</span>
+                <span class="cemiterio">Okunoin - Monte Koya, Japão</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dCNo7XIyMQ0" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/dCNo7XIyMQ0" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira do Fogo</span>
+                <span class="atributo">Paixão / Destruição</span>
+                <span class="cemiterio">Cemitério de Tulcán - Equador</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Tp1MB84YL2s" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/Tp1MB84YL2s" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Águas Profundas</span>
+                <span class="atributo">Abismo / Inconsciente</span>
+                <span class="cemiterio">Neptune Memorial Reef - Flórida</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Q182YSAcgNk" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/Q182YSAcgNk" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira da Sombra</span>
+                <span class="atributo">Revelação / Verdade</span>
+                <span class="cemiterio">Cemitério de Greyfriars - Escócia</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KAwFZvDHOk4" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/KAwFZvDHOk4" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Pombagira da Fenda</span>
+                <span class="atributo">Limiar / Portais</span>
+                <span class="cemiterio">Cemitério Judaico de Praga - Tcheca</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/P4mC3avgs3Y" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/P4mC3avgs3Y" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Calunga Profunda</span>
+                <span class="atributo">Eternidade / Fim</span>
+                <span class="cemiterio">Vale dos Reis - Luxor, Egito</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/GcRdBJzBMa8" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/GcRdBJzBMa8" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+        <div class="card-pombagira">
+            <div class="info-header">
+                <span class="nome-pombagira">Das Correntes</span>
+                <span class="atributo">Quebra / Libertação</span>
+                <span class="cemiterio">Cemitério Santa Isabel - Belém</span>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/1rrmBzp9Cfo" allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/1rrmBzp9Cfo" class="btn-link" target="_blank">Ouvir Chamado</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-titulo">Laroyê, Senhora do Destino</div>
+        <p class="footer-frase">
+            "Não pise no rastro dela, pois o chão que ela toca incendeia o que é falso. Entre o cemitério e a encruzilhada, sua risada é a lei que corta a escuridão e abre os caminhos de quem tem coragem de olhar nos seus olhos."
+        </p>
+        <div class="footer-selo">Sob o Domínio da Calunga • 2026</div>
+    </footer>
+
+</body>
+</html>
